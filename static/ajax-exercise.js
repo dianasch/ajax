@@ -45,6 +45,16 @@ function orderMelons(evt) {
 
     // TODO: show the result message after your form
     // TODO: if the result code is ERROR, make it show up in red (see our CSS!)
+    const formInputs = {
+        'type': $('#melon-type-field').val(),
+        'quantity': $('#qty-field').val()
+    };
+
+    $.post('/order-melons.json', formInputs, (response) => {
+        console.log(response);
+    })
+    
+    
 }
 
 $("#order-form").on('submit', orderMelons);
